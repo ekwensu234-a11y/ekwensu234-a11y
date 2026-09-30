@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hair Harmony | Premium Hair Care</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Arial,sans-serif;
+background:#fbf7f3;
+color:#241b1c;
+line-height:1.6
+}
+.top{
+background:#241b1c;color:white;text-align:center;
+padding:9px;font-size:12px;letter-spacing:1px
+}
+nav{
+background:white;padding:18px 6%;
+display:flex;align-items:center;
+justify-content:space-between;
+position:sticky;top:0;z-index:10;
+box-shadow:0 2px 12px #00000010
+}
+.logo{font:700 28px Georgia,serif}
+.logo span{color:#a3615b}
+nav a{color:#241b1c;text-decoration:none;margin:0 12px}
+.cart{
+border:0;background:#f1e5e1;
+border-radius:50%;width:42px;height:42px;
+cursor:pointer
+}
+.hero{
+max-width:1200px;margin:auto;
+padding:65px 6%;
+display:grid;grid-template-columns:1fr 1fr;
+gap:45px;align-items:center
+}
+.kicker{
+color:#a3615b;font-size:12px;
+font-weight:bold;letter-spacing:3px;
+text-transform:uppercase
+}
+h1{
+font:700 clamp(48px,6vw,78px)/.95 Georgia,serif;
+margin:18px 0
+}
+.hero p{color:#756b6d;max-width:520px;margin-bottom:25px}
+.btn{
+background:#241b1c;color:white;
+border:0;border-radius:30px;
+padding:15px 25px;cursor:pointer
+}
+.hero-image{
+height:440px;border-radius:30px;
+background:linear-gradient(135deg,#ead0ca,#b87870,#3a2523);
+position:relative;overflow:hidden
+}
+.hero-image:before{
+content:"";
+position:absolute;
+width:230px;height:330px;
+background:linear-gradient(120deg,#171010,#70423b,#171010);
+border-radius:48%;
+left:30%;top:12%;
+transform:rotate(10deg)
+}
+.hero-image:after{
+content:"HAIR HARMONY";
+position:absolute;bottom:25px;left:25px;
+color:white;font:700 25px Georgia
+}
+
+.section{
+max-width:1200px;margin:auto;
+padding:25px 6% 70px
+}
+.heading{
+display:flex;justify-content:space-between;
+align-items:end;margin-bottom:25px
+}
+.heading h2{font:700 38px Georgia,serif}
+.heading span{color:#756b6d}
+
+.tools{
+display:flex;gap:10px;flex-wrap:wrap;
+margin-bottom:25px
+}
+.search{
+flex:1;min-width:220px;
+border:1px solid #ddd;
+border-radius:30px;padding:14px 18px;
+outline:none
+}
+.filter{
+border:1px solid #ddd;
+background:white;border-radius:30px;
+padding:11px 18px;cursor:pointer
+}
+.filter.active{background:#241b1c;color:white}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px
+}
+.card{
+background:white;border-radius:20px;
+overflow:hidden;border:1px solid #eadfdb;
+transition:.2s
+}
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 35px #00000012
+}
+.product-img{
+height:230px;
+background:linear-gradient(135deg,#ead0ca,#9e655e);
+display:flex;align-items:center;
+justify-content:center;position:relative
+}
+.product-img:after{
+content:"";
+width:100px;height:160px;
+background:linear-gradient(100deg,#251817,#8b564e,#211515);
+border-radius:12px 12px 25px 25px
+}
+.heart{
+position:absolute;right:12px;top:12px;
+z-index:2;border:0;background:white;
+width:36px;height:36px;border-radius:50%;
+cursor:pointer;font-size:18px
+}
+.info{padding:17px}
+.tag{
+font-size:10px;color:#a3615b;
+font-weight:bold;text-transform:uppercase;
+letter-spacing:1px
+}
+.name{font-weight:bold;margin:7px 0}
+.price{font-weight:bold;font-size:17px}
+.add{
+width:100%;margin-top:13px;
+border:0;border-radius:12px;
+padding:12px;background:#f0e5e1;
+cursor:pointer
+}
+.add:hover{background:#ead0ca}
+
+.banner{
+max-width:1050px;margin:0 auto 70px;
+background:#dfbbb3;border-radius:28px;
+padding:40px
+}
+.banner h2{font:700 32px Georgia,serif}
+.banner p{margin:8px 0 18px;color:#634b48}
+
+footer{
+background:#241b1c;color:white;
+padding:45px 6%
+}
+footer p{color:#c7bab8;margin-top:10px}
+
+@media(max-width:850px){
+.hero{grid-template-columns:1fr}
+.grid{grid-template-columns:repeat(2,1fr)}
+nav a{display:none}
+}
+@media(max-width:500px){
+.grid{grid-template-columns:1fr}
+.hero-image{height:330px}
+.hero{padding-top:40px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">
+FREE DELIVERY ON ORDERS OVER ₦50,000 • NATIONWIDE
+</div>
+
+<nav>
+<div class="logo">Hair <span>Harmony</span></div>
+
+<div>
+<a href="#shop">Shop</a>
+<a href="#about">About</a>
+</div>
+
+<button class="cart" onclick="showCart()">🛍️</button>
+</nav>
+
+<section class="hero">
+
+<div>
+<div class="kicker">Your crown, your harmony</div>
+
+<h1>
+Healthy hair.<br>
+Beautiful you.
+</h1>
+
+<p>
+Premium hair care essentials, nourishing oils and styling
+favorites carefully selected for every crown.
+</p>
+
+<a href="#shop">
+<button class="btn">Shop the collection →</button>
+</a>
+</div>
+
+<div class="hero-image"></div>
+
+</section>
+
+<section class="section" id="shop">
+
+<div class="heading">
+<h2>Shop favorites</h2>
+<span id="count"></span>
+</div>
+
+<div class="tools">
+
+<input
+id="search"
+class="search"
+placeholder="Search hair products..."
+oninput="render()"
+>
+
+<button class="filter active" onclick="category('All',this)">
+All
+</button>
+
+<button class="filter" onclick="category('Hair Care',this)">
+Hair Care
+</button>
+
+<button class="filter" onclick="category('Oils',this)">
+Oils
+</button>
+
+<button class="filter" onclick="category('Styling',this)">
+Styling
+</button>
+
+</div>
+
+<div class="grid" id="products"></div>
+
+</section>
+
+<section class="banner">
+
+<h2>Give your hair some love 💕</h2>
+
+<p>
+Get 10% off your first Hair Harmony order.
+</p>
+
+<button class="btn" onclick="promo()">
+Get my discount
+</button>
+
+</section>
+
+<footer id="about">
+
+<div class="logo">
+Hair <span>Harmony</span>
+</div>
+
+<p>
+Thoughtful hair care for every texture,
+every routine and every crown.
+</p>
+
+</footer>
+
+<script>
+
+const products=[
+
+{
+name:"Harmony Hydrating Shampoo",
+category:"Hair Care",
+price:18500,
+tag:"Best Seller"
+},
+
+{
+name:"Silk & Shine Hair Oil",
+category:"Oils",
+price:12500,
+tag:"New"
+},
+
+{
+name:"Curl Revival Leave-In",
+category:"Hair Care",
+price:16000,
+tag:"Popular"
+},
+
+{
+name:"Sleek Hold Styling Cream",
+category:"Styling",
+price:14500,
+tag:"Everyday"
+},
+
+{
+name:"Scalp Balance Serum",
+category:"Oils",
+price:17500,
+tag:"Trending"
+},
+
+{
+name:"Deep Repair Hair Mask",
+category:"Hair Care",
+price:21000,
+tag:"Repair"
+},
+
+{
+name:"Edge Harmony Gel",
+category:"Styling",
+price:8500,
+tag:"Essential"
+},
+
+{
+name:"Growth Ritual Oil Blend",
+category:"Oils",
+price:19500,
+tag:"Premium"
+}
+
+];
+
+let selected="All";
+
+function money(number){
+return "₦"+number.toLocaleString();
+}
+
+function category(cat,button){
+
+selected=cat;
+
+document.querySelectorAll(".filter")
+.forEach(b=>b.classList.remove("active"));
+
+button.classList.add("active");
+
+render();
+}
+
+function render(){
+
+let search=document
+.getElementById("search")
+.value
+.toLowerCase();
+
+let list=products.filter(product=>{
+
+let matchesCategory=
+selected==="All" ||
+product.category===selected;
+
+let matchesSearch=
+product.name.toLowerCase()
+.includes(search);
+
+return matchesCategory && matchesSearch;
+
+});
+
+document.getElementById("count")
+.innerText=list.length+" products";
+
+document.getElementById("products")
+.innerHTML=list.map(product=>`
+
+<div class="card">
+
+<div class="product-img">
+
+<button
+class="heart"
+onclick="this.innerText=this.innerText==='♡'?'♥':'♡'"
+>
+♡
+</button>
+
+</div>
+
+<div class="info">
+
+<div class="tag">
+${product.tag} • ${product.category}
+</div>
+
+<div class="name">
+${product.name}
+</div>
+
+<div class="price">
+${money(product.price)}
+</div>
+
+<button
+class="add"
+onclick="addToCart('${product.name}')"
+>
+Add to bag
+</button>
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+function addToCart(name){
+
+alert(
+"🛍️ "+name+
+" has been added to your bag!"
+);
+
+}
+
+function showCart(){
+
+alert(
+"Your Hair Harmony bag 🛍️\n\n"+
+"Cart system ready for payment integration."
+);
+
+}
+
+function promo(){
+
+alert(
+"🎉 Your discount code is:\n\nHARMONY10\n\n"+
+"Use it at checkout."
+);
+
+}
+
+render();
+
+</script>
+
+</body>
+</html>
